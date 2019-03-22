@@ -16,8 +16,9 @@ public interface StudentRepository extends JpaRepository  <Student, Long> {
     @Query("select student from Student student")
     List<Student> getAllStudents();
 
+
     @Transactional
-   @Modifying
+    @Modifying
     @Query(value = "insert into student (name, login, password, university,course) values (:name, :login, :password, :university ,:course)",
             nativeQuery = true)
     void insertStudent(@Param("name") String name, @Param("login") String login,
