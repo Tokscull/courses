@@ -15,7 +15,7 @@ public class Student {
     @Id
     @Getter
     @Setter
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
 
