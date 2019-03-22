@@ -2,7 +2,7 @@ package com.iba.courses.service;
 
 
 import com.iba.courses.domain.Student;
-import com.iba.courses.repoaitory.StudentRepository;
+import com.iba.courses.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

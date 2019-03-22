@@ -1,4 +1,4 @@
-package com.iba.courses.repoaitory;
+package com.iba.courses.repository;
 
 import com.iba.courses.domain.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
