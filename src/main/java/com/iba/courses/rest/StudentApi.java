@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/student")
+@CrossOrigin
 public class StudentApi {
 
 
@@ -26,7 +27,7 @@ public class StudentApi {
     private void insertStudent(){
         Student student = new Student(1,"Kirylenka Yahor","123","321","bsuir",3);
         studentService.insertStudent(student);
-        System.out.println("insert student");
+        System.out.println("Insert student");
     }
 
     @PostMapping("/addStudent")
