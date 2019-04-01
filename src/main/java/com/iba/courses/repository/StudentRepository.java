@@ -26,4 +26,7 @@ public interface StudentRepository extends JpaRepository  <Student, Long> {
                        @Param("course") Integer course);
 
 
+
+    @Transactional
+    Long deleteStudentById(Long id);
 }

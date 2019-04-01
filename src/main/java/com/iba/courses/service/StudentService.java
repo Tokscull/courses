@@ -25,7 +25,13 @@ public class StudentService {
         System.out.println("Service insertStudent");
     }
 
+
+
     public void addStudent(Student student) {
         studentRepository.save(student);
+    }
+
+    public void deleteStudentById(Long id) {
+        studentRepository.deleteStudentById(id);
     }
 }

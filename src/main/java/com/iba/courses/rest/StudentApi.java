@@ -2,14 +2,16 @@ package com.iba.courses.rest;
 
 import com.iba.courses.domain.Student;
 import com.iba.courses.service.StudentService;
+import com.iba.courses.service.TerminalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("api/student")
-@CrossOrigin
 public class StudentApi {
 
 
@@ -24,15 +26,20 @@ public class StudentApi {
 
 
     @PostMapping("/insertStudent")
-    private void insertStudent(){
-        Student student = new Student(1,"Kirylenka Yahor","123","321","bsuir",3);
+    private void insertStudent(@RequestBody Student student){
         studentService.insertStudent(student);
         System.out.println("Insert student");
     }
 
     @PostMapping("/addStudent")
-    private void addStudent(@RequestBody Student student){
+    private void addStudent(@RequestBody Student student) {
        studentService.addStudent(student);
+    }
+
+
+    @GetMapping("/imsConnect")
+    private Map getImsConnect(){
+        return Collections.singletonMap("result", new TerminalService().ImsTerminal());
     }
 
 
