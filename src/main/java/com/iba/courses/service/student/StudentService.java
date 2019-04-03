@@ -1,4 +1,4 @@
-package com.iba.courses.service;
+package com.iba.courses.service.student;
 
 
 import com.iba.courses.domain.Student;

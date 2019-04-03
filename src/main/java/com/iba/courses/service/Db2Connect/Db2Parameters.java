@@ -1,5 +1,4 @@
-package com.iba.courses.service;
-
+package com.iba.courses.service.Db2Connect;
 
 import lombok.*;
 
@@ -8,12 +7,12 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class ImsParameters {
+public class Db2Parameters {
 
     private String hostname;
-    private String datastore;
-    private String exitIdentifier;
     private Integer port;
+    private String location;
     private String userId;
     private String password;
+
 }

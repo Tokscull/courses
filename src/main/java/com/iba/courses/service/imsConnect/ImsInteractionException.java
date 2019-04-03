@@ -1,4 +1,4 @@
-package com.iba.courses.service;
+package com.iba.courses.service.imsConnect;
 
 import com.ibm.ims.connect.ImsConnectApiException;
 

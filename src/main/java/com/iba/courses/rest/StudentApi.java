@@ -1,14 +1,11 @@
 package com.iba.courses.rest;
 
 import com.iba.courses.domain.Student;
-import com.iba.courses.service.StudentService;
-import com.iba.courses.service.TerminalService;
+import com.iba.courses.service.student.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("api/student")
@@ -36,11 +33,6 @@ public class StudentApi {
        studentService.addStudent(student);
     }
 
-
-    @GetMapping("/imsConnect")
-    private Map getImsConnect(){
-        return Collections.singletonMap("result", new TerminalService().ImsTerminal());
-    }
 
 
 

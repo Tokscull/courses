@@ -1,11 +1,11 @@
-package com.iba.courses.service;
+package com.iba.courses.service.imsConnect;
 
 import com.ibm.ims.connect.*;
 
 public class ImsConnectionService {
 
-    private final String USER_ID = "LAPUSHA";
-    private final String PASSWORD = "LAPUSHA2";
+ //   private final String USER_ID = "LAPUSHA";
+ //   private final String PASSWORD = "LAPUSHA2";
     private final String HOST = "172.20.2.116";
 
     private ConnectionFactory connectionFactory;
@@ -14,15 +14,17 @@ public class ImsConnectionService {
 
 
 
-    public void init(ImsParameters imsParameters) throws ImsInteractionException {
+    public void init(ImsParameters imsParameters, String login, String password) throws ImsInteractionException {
 
 
         imsParameters.setHostname(HOST);
         imsParameters.setDatastore("IVP1");
         imsParameters.setExitIdentifier("*SAMPL1*");
         imsParameters.setPort(7003);
-        imsParameters.setUserId(USER_ID);
-        imsParameters.setPassword(PASSWORD);
+        imsParameters.setUserId(login);
+        System.out.println(login);
+        imsParameters.setPassword(password);
+        System.out.println(password);
 
         try {
             this.connectionFactory = new ConnectionFactory();
@@ -74,7 +76,6 @@ public class ImsConnectionService {
         }
         return "Error";
     }
-
 }
 
 
