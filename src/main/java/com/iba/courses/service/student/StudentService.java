@@ -15,23 +15,16 @@ public class StudentService {
     private StudentRepository studentRepository;
 
     public List<Student> getAllStudent() {
-        System.out.println("Service getAllStudent");
         return studentRepository.getAllStudents();
     }
 
    public void insertStudent(Student student) {
         studentRepository.insertStudent(student.getName(),student.getLogin(),student.getPassword(),
                                          student.getUniversity(),student.getCourse());
-        System.out.println("Service insertStudent");
     }
 
 
-
-    public void addStudent(Student student) {
-        studentRepository.save(student);
-    }
-
-    public void deleteStudentById(Long id) {
+   public void deleteStudentById(Integer id) {
         studentRepository.deleteStudentById(id);
     }
 }

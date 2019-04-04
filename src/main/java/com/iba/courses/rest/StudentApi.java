@@ -17,7 +17,6 @@ public class StudentApi {
 
    @GetMapping("/getAllStudent")
     private List<Student>getAllStudent(){
-        System.out.println("REST");
         return studentService.getAllStudent();
     }
 
@@ -25,14 +24,12 @@ public class StudentApi {
     @PostMapping("/insertStudent")
     private void insertStudent(@RequestBody Student student){
         studentService.insertStudent(student);
-        System.out.println("Insert student");
     }
 
-    @PostMapping("/addStudent")
-    private void addStudent(@RequestBody Student student) {
-       studentService.addStudent(student);
+   @PostMapping("/deleteStudent")
+    private void deleteStudentById(@RequestBody Integer id) {
+        studentService.deleteStudentById(id);
     }
-
 
 
 

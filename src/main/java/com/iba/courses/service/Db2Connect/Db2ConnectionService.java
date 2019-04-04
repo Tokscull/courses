@@ -5,21 +5,21 @@ import java.util.Properties;
 
 public class Db2ConnectionService {
 
-    private final String USER_ID = "LAPUSHA";
-    private final String PASSWORD = "LAPUSHA2";
+ //   private final String USER_ID = "LAPUSHA";
+ //   private final String PASSWORD = "LAPUSHA2";
     private final String HOST = "172.20.2.116";
 
     private Connection connection;
     private Statement statement;
 
 
-    public void init(Db2Parameters db2Parameters) throws SQLException {
+    public void init(Db2Parameters db2Parameters, String login, String password) throws SQLException {
 
         db2Parameters.setHostname(HOST);
         db2Parameters.setLocation("DALLASB");
         db2Parameters.setPort(5035);
-        db2Parameters.setUserId(USER_ID);
-        db2Parameters.setPassword(PASSWORD);
+        db2Parameters.setUserId(login);
+        db2Parameters.setPassword(password);
 
 
         String url = "jdbc:db2://"
